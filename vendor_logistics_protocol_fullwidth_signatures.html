@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Logistics Protocol</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    @media print {
+      body {
+        width: 210mm;
+        height: 297mm;
+        margin: 10mm auto;
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+      font-size: 8px;
+    }
+
+    input, textarea, select {
+      font-size: 8px;
+      width: 100%;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 0.3rem;
+    }
+
+    h1, h2, h3 {
+      font-size: 12px;
+      color: #333366;
+    }
+
+    label {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+
+    .section {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      background-color: #5e1e84;
+      color: white;
+      padding: 0.5rem;
+      margin: -1rem -1rem 1rem -1rem;
+      font-weight: bold;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .contact-subgroup {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      background-color: #f0f0f0;
+    }
+
+    .contact-subgroup h4 {
+      margin: 0;
+      color: #444;
+    }
+
+    .signature-table {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      background-color: #f0f0f0;
+      margin: 0;
+      color: #444;
+    }
+  
+    .signature-table td {
+      padding: 0.5rem;
+      vertical-align: top;
+    }
+    </style>
+    
+</head>
+<body>
+  <h1>Vendor Logistics Protocol</h1>
+  <p>This Logistics Protocol describes the logistics specifications of the flow between the SUPPLIER site and MEGATECH site. General supply chain and logistics rules are described in the MEGATECH Logistics Requirements for Supplier.</p>
+
+  <div class="form-grid">
+    <div class="section">
+      <div class="section-title">MEGATECH plant</div>
+      <label>Branch</label><input type="text" value="Megatech">
+      <label>Plant</label><input type="text" value="Megatech Industries Tomaszow Sp. Z o.o">
+      <label>Address</label><input type="text" value="ul. Piaskowa 120">
+      <label>Location</label><input type="text" value="PL 972 00 Tomaszow Mazowiecki">
+      <label>Country</label><input type="text" value="PL">
+      <label>Phone number</label><input type="text" value="+48 0 44 72 56 100">
+      <label>Fax number</label><input type="text">
+    </div>
+
+    <div class="section">
+      <div class="section-title">SUPPLIER plant</div>
+      <label>Group name</label><input type="text">
+      <label>Division name</label><input type="text">
+      <label>Address</label><input type="text">
+      <label>Location</label><input type="text">
+      <label>Country</label><input type="text">
+      <label>Phone number</label><input type="text">
+      <label>Fax number</label><input type="text">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">CONTACTS</div>
+    <div class="contact-grid">
+      <div>
+        <h3>CONTACTS Supplier</h3>
+        <div class="contact-subgroup">
+          <h4>Sales Manager</h4>
+          <label>Name</label><input type="text">
+          <label>Email</label><input type="email">
+          <label>Phone</label><input type="text">
+        </div>
+        <div class="contact-subgroup">
+          <h4>Customer Quality Engineer</h4>
+          <label>Name</label><input type="text">
+          <label>Email</label><input type="email">
+          <label>Phone</label><input type="text">
+        </div>
+        <div class="contact-subgroup">
+          <h4>Logistics Manager</h4>
+          <label>Name</label><input type="text">
+          <label>Email</label><input type="email">
+          <label>Phone</label><input type="text">
+        </div>
+        <div class="contact-subgroup">
+          <h4>Serial Logistic Contact person</h4>
+          <label>Name</label><input type="text">
+          <label>Email</label><input type="email">
+          <label>Phone</label><input type="text">
+        </div>
+      </div>
+      <div>
+        <h3>CONTACTS Megatech</h3>
+        <div class="contact-subgroup">
+          <h4>Purchasing Manager</h4>
+          <label>Name</label><input type="text" value="GAIDA Anna">
+          <label>Email</label><input type="email" value="anna.gaida@mdindustries.com">
+          <label>Phone</label><input type="text" value="+48 44 755 574">
+        </div>
+        <div class="contact-subgroup">
+          <h4>Quality Manager</h4>
+          <label>Name</label><input type="text" value="ŁAMIKOWSKA Anna">
+          <label>Email</label><input type="email" value="Anna.Lamikowska@mdindustries.com">
+          <label>Phone</label><input type="text" value="+48 605 122 347">
+        </div>
+        <div class="contact-subgroup">
+          <h4>Logistics Manager</h4>
+          <label>Name</label><input type="text" value="Krzysztof Paląg">
+          <label>Email</label><input type="email" value="krzysztof.palag@mdindustries.com">
+          <label>Phone</label><input type="text" value="+48 661 620 729">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="signature-table">
+    <tr>
+      <th>SIGNATURES Supplier</th>
+      <th>SIGNATURES Megatech</th>
+    </tr>
+    <tr>
+      <td>
+        <div class="role">Logistics Manager</div>
+        <label>Date:</label><br><input type="date">
+        <label>Signature:</label><input type="text">
+      </td>
+      <td>
+        <div class="role">Logistics Manager</div>
+        <label>Date:</label><br><input type="date">
+        <label>Signature:</label><input type="text">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="role">Sales Manager</div>
+        <label>Date:</label><br><input type="date">
+        <label>Signature:</label><input type="text">
+      </td>
+      <td>
+        <div class="role">Purchasing Manager</div>
+        <label>Date:</label><br><input type="date">
+        <label>Signature:</label><input type="text">
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,14 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <div class="form-row">
-  <label>Phone:</label>
-  <input type="text" placeholder="+48 123 456 789" />
-</div>
-<div class="form-row">
-  <label>Country:</label>
-  <input type="text" placeholder="PL" />
-</div>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,29 +8,6 @@
     *, *::before, *::after {
       box-sizing: border-box;
     }
-    <div class="form-row">
-  <label for="branch">Branch:</label>
-  <input type="text" id="branch" placeholder="Megatech" />
-    </div>
-.form-row {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  margin-bottom: 0.3rem;
-}
-
-.form-row label {
-  flex: 0 0 60px; /* fixed label width */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-.form-row input,
-.form-row select,
-.form-row textarea {
-  flex: 1;
-}
-
 
     @media print {
       body {
@@ -47,6 +15,7 @@
         height: 297mm;
         margin: 5mm auto;
       }
+
       .no-print {
         display: none !important;
       }
@@ -54,25 +23,23 @@
       #form-wrapper {
         padding: 0 !important;
       }
+
       input, textarea {
-        font-size: 9px !important;
+        font-size: 6px !important;
+        line-height: 1.2;
       }
+    }
+
+    html, body {
+      padding: 0 !important;
+      margin: 0 !important;
     }
 
     body {
       font-family: Arial, sans-serif;
       margin: 0.5rem;
       background-color: #fff;
-      font-size: 9px;
-    }
-
-    input, textarea, select {
-      font-size: 9px;
-      width: 100%;
-      padding: 0.2rem;
-      border: 1px solid #ccc;
-      border-radius: 0;
-      margin-top: 0.2rem;
+      font-size: 6px;
     }
 
     #form-wrapper {
@@ -81,15 +48,32 @@
     }
 
     h1, h2, h3 {
-      font-size: 12px;
+      font-size: 9px;
       color: #333366;
       margin-bottom: 0.3rem;
     }
 
-    label {
-      display: block;
-      margin-top: 0.3rem;
+    .form-row {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .form-row label {
+      flex: 0 0 65px;
       font-weight: bold;
+      margin: 0;
+    }
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      flex: 1;
+      padding: 0.2rem;
+      font-size: 6px;
+      border: 1px solid #999;
+      line-height: 1.2;
     }
 
     .section {
@@ -99,18 +83,24 @@
       page-break-inside: avoid;
     }
 
+    .section:nth-child(odd) {
+      background-color: #fafafa;
+    }
+
     .section-title {
       background-color: #5e1e84;
       color: white;
       padding: 0.3rem;
       margin: -0.3rem -0.3rem 0.5rem -0.3rem;
-      font-weight: bold;
-      font-size: 9px;
+      font-weight: 700;
+      font-size: 7.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
     }
 
-    .form-grid, .contact-grid {
+    .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 0.6rem;
     }
 
@@ -122,7 +112,7 @@
     }
 
     .contact-subgroup h4 {
-      margin: 0;
+      margin: 0 0 0.3rem 0;
       color: #444;
       font-size: 7px;
     }
@@ -134,11 +124,17 @@
       color: #444;
       margin-bottom: 0.5rem;
       page-break-inside: avoid;
+      border-collapse: collapse;
     }
 
     .signature-table td {
       padding: 0.3rem;
       vertical-align: top;
+      border-left: 1px solid #ccc;
+    }
+
+    .signature-table td:first-child {
+      border-left: none;
     }
 
     .button-bar {
@@ -149,7 +145,7 @@
 
     .download-button {
       padding: 0.3rem 0.6rem;
-      font-size: 8px;
+      font-size: 7px;
       background-color: #5e1e84;
       color: white;
       border: none;
@@ -168,32 +164,38 @@
 </head>
 <body>
   <div id="form-wrapper">
+    <div style="font-weight:bold; font-size:8px; margin-bottom:5px;">
+      Vendor Logistics Protocol — MEGATECH (Confidential)
+    </div>
+
     <h1>Vendor Logistics Protocol</h1>
     <p>This Logistics Protocol describes the logistics specifications of the flow between the SUPPLIER site and MEGATECH site. General supply chain and logistics rules are described in the <i>MEGATECH Logistics Requirements for Supplier</i>.</p>
 
-    <div class="form-grid">
-      <div class="section">
-        <div class="section-title">MEGATECH Plant</div>
-        <label>Branch</label><input type="text">
-        <label>Plant</label><input type="text">
-        <label>Address</label><input type="text">
-        <label>Location</label><input type="text">
-        <label>Country</label><input type="text">
-        <label>Phone number</label><input type="text">
-        <label>Fax number</label><input type="text">
-      </div>
-      <div class="section">
-        <div class="section-title">SUPPLIER Plant</div>
-        <label>Group name</label><input type="text">
-        <label>Division name</label><input type="text">
-        <label>Address</label><input type="text">
-        <label>Location</label><input type="text">
-        <label>Country</label><input type="text">
-        <label>Phone number</label><input type="text">
-        <label>Fax number</label><input type="text">
-      </div>
+    <!-- MEGATECH PLANT -->
+    <div class="section">
+      <div class="section-title">MEGATECH Plant</div>
+      <div class="form-row"><label>Branch</label><input type="text" value="Megatech"></div>
+      <div class="form-row"><label>Plant</label><input type="text" value="Megatech Industries Tomaszow Sp. Z o.o"></div>
+      <div class="form-row"><label>Address</label><input type="text" value="ul. Piaskowa 120"></div>
+      <div class="form-row"><label>Location</label><input type="text" value="PL 972 00 Tomaszow Mazowiecki"></div>
+      <div class="form-row"><label>Country</label><input type="text" value="PL"></div>
+      <div class="form-row"><label>Phone</label><input type="text" value="+48 0 44 72 56 100"></div>
+      <div class="form-row"><label>Fax</label><input type="text"></div>
     </div>
 
+    <!-- SUPPLIER PLANT -->
+    <div class="section">
+      <div class="section-title">SUPPLIER Plant</div>
+      <div class="form-row"><label>Group</label><input type="text"></div>
+      <div class="form-row"><label>Division</label><input type="text"></div>
+      <div class="form-row"><label>Address</label><input type="text"></div>
+      <div class="form-row"><label>Location</label><input type="text"></div>
+      <div class="form-row"><label>Country</label><input type="text"></div>
+      <div class="form-row"><label>Phone</label><input type="text"></div>
+      <div class="form-row"><label>Fax</label><input type="text"></div>
+    </div>
+
+    <!-- CONTACTS -->
     <div class="section">
       <div class="section-title">Contacts</div>
       <div class="contact-grid">
@@ -201,33 +203,21 @@
           <h3>Supplier Contacts</h3>
           <div class="contact-subgroup">
             <h4>Sales Manager</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
+            <div class="form-row"><label>Name</label><input type="text"></div>
+            <div class="form-row"><label>Email</label><input type="email"></div>
+            <div class="form-row"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Customer Quality Engineer</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
+            <div class="form-row"><label>Name</label><input type="text"></div>
+            <div class="form-row"><label>Email</label><input type="email"></div>
+            <div class="form-row"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Logistics Manager</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
-          </div>
-          <div class="contact-subgroup">
-            <h4>Serial Logistic Contact</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
-          </div>
-          <div class="contact-subgroup">
-            <h4>EDI/IT Contact</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
+            <div class="form-row"><label>Name</label><input type="text"></div>
+            <div class="form-row"><label>Email</label><input type="email"></div>
+            <div class="form-row"><label>Phone</label><input type="text"></div>
           </div>
         </div>
 
@@ -235,38 +225,27 @@
           <h3>MEGATECH Contacts</h3>
           <div class="contact-subgroup">
             <h4>Purchasing Manager</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
+            <div class="form-row"><label>Name</label><input type="text"></div>
+            <div class="form-row"><label>Email</label><input type="email"></div>
+            <div class="form-row"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Supplier Quality Manager</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
+            <div class="form-row"><label>Name</label><input type="text"></div>
+            <div class="form-row"><label>Email</label><input type="email"></div>
+            <div class="form-row"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Logistics Manager</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
-          </div>
-          <div class="contact-subgroup">
-            <h4>Serial Logistic Contact</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
-          </div>
-          <div class="contact-subgroup">
-            <h4>EDI/IT Contact Person</h4>
-            <label>Name</label><input type="text">
-            <label>Email</label><input type="email">
-            <label>Phone</label><input type="text">
+            <div class="form-row"><label>Name</label><input type="text"></div>
+            <div class="form-row"><label>Email</label><input type="email"></div>
+            <div class="form-row"><label>Phone</label><input type="text"></div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- SIGNATURES -->
     <table class="signature-table">
       <tr>
         <th>SIGNATURES Supplier</th>
@@ -306,43 +285,38 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
-   function downloadPDF() {
-  const element = document.getElementById('form-wrapper');
-  const buttons = document.querySelectorAll('.no-print');
+    function downloadPDF() {
+      const element = document.getElementById('form-wrapper');
+      const buttons = document.querySelectorAll('.no-print');
 
-  // Hide buttons temporarily
-  buttons.forEach(btn => btn.style.display = 'none');
+      buttons.forEach(btn => btn.style.display = 'none');
+      element.style.marginTop = '0';
+      element.style.paddingTop = '0';
 
-  // Remove top spacing
-  element.style.marginTop = '0';
-  element.style.paddingTop = '0';
+      const opt = {
+        margin: 0,
+        filename: 'logistics_protocol.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: {
+          scale: 0.9,
+          useCORS: true,
+          scrollY: 0,
+          windowWidth: document.body.scrollWidth
+        },
+        jsPDF: {
+          unit: 'mm',
+          format: 'a4',
+          orientation: 'portrait'
+        },
+        pagebreak: {
+          mode: ['css', 'legacy']
+        }
+      };
 
-  const opt = {
-    margin: 0,
-    filename: 'logistics_protocol.pdf',
-    image: { type: 'jpeg', quality: 1 },
-    html2canvas: {
-      scale: 0.9,
-      useCORS: true,
-      scrollY: 0,
-      windowWidth: document.body.scrollWidth
-    },
-    jsPDF: {
-      unit: 'mm',
-      format: 'a4',
-      orientation: 'portrait'
-    },
-    pagebreak: {
-      mode: ['css', 'legacy']
+      html2pdf().set(opt).from(element).save().then(() => {
+        buttons.forEach(btn => btn.style.display = '');
+      });
     }
-  };
-
-  html2pdf().set(opt).from(element).save().then(() => {
-    // Restore button visibility
-    buttons.forEach(btn => btn.style.display = '');
-  });
-}
-
   </script>
 </body>
 </html>

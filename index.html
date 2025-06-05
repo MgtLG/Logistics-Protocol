@@ -240,7 +240,13 @@
   <script>
     function downloadPDF() {
       const element = document.body;
-      const opt = {
+      const scrollHeightMM = document.body.scrollHeight * 0.264583;
+    const opt = {
+      margin: 0,
+      filename: 'logistics_protocol.pdf',
+      image: { type: 'jpeg', quality: 1 },
+      html2canvas: { scale: 2, useCORS: true, windowWidth: document.body.scrollWidth },
+      jsPDF: { unit: 'mm', format: [210, scrollHeightMM], orientation: 'portrait' }
         margin:       0.5,
         filename:     'logistics_protocol.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
@@ -250,7 +256,6 @@
       
     opt.pagebreak = { mode: ['avoid-all', 'css', 'legacy'] };
     html2pdf().set(opt).from(element).save();
-    
     }
   </script>
 </body>

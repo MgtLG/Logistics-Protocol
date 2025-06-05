@@ -238,26 +238,21 @@
     <button onclick="downloadPDF()" style="margin-top: 2rem; padding: 0.5rem 1rem; font-size: 10px;">Download as PDF</button>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
-    function downloadPDF() {
-      const element = document.body;
-      const scrollHeightMM = document.body.scrollHeight * 0.264583;
+<script>
+  function downloadPDF() {
+    const element = document.body;
+    const scrollHeightMM = document.body.scrollHeight * 0.264583;
     const opt = {
       margin: 0,
       filename: 'logistics_protocol.pdf',
       image: { type: 'jpeg', quality: 1 },
       html2canvas: { scale: 2, useCORS: true, windowWidth: document.body.scrollWidth },
-      jsPDF: { unit: 'mm', format: [210, scrollHeightMM], orientation: 'portrait' }
-        margin:       0.5,
-        filename:     'logistics_protocol.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-      };
-      
-    opt.pagebreak = { mode: ['avoid-all', 'css', 'legacy'] };
+      jsPDF: { unit: 'mm', format: [210, scrollHeightMM], orientation: 'portrait' },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+
     html2pdf().set(opt).from(element).save();
-    
-    }
-  </script>
+  }
+</script>
 </body>
 </html>

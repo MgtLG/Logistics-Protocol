@@ -244,11 +244,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
   function downloadPDF() {
-    const element = document.getElementById('form-wrapper');
+    const element = document.body;
     const scrollHeightMM = document.body.scrollHeight * 0.264583;
 
     const opt = {
-      margin: 0
+      margin: 1,
       filename: 'logistics_protocol.pdf',
       image: { type: 'jpeg', quality: 1 },
       html2canvas: {
@@ -258,7 +258,7 @@
       },
       jsPDF: {
         unit: 'mm',
-        format: [210, scrollHeightMM],
+        format: [50, scrollHeightMM],
         orientation: 'portrait'
       },
       pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }

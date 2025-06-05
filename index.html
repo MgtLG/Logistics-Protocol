@@ -244,7 +244,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
   function downloadPDF() {
-    const element = document.body;
+    const element = document.getElementById('form-wrapper');
     const scrollHeightMM = document.body.scrollHeight * 0.264583;
 
     const opt = {
@@ -258,7 +258,7 @@
       },
       jsPDF: {
         unit: 'mm',
-        format: [50, scrollHeightMM],
+        format: [210, scrollHeightMM],
         orientation: 'portrait'
       },
       pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }

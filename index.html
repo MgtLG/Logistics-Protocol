@@ -240,17 +240,15 @@
     </tr>
   </table>
      </div>
-<button onclick="downloadPDF()" style="margin-top: 2rem; padding: 0.5rem 1rem; font-size: 8px;">
-  Download as PDF
-</button>
+  <button onclick="downloadPDF()" class="download-button">Download as PDF</button>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script>
-  function downloadPDF() {
-    const element = document.getElementById('form-wrapper');
-    const scrollHeightMM = document.body.scrollHeight * 0.264583;
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById('form-wrapper');
+      const scrollHeightMM = element.scrollHeight * 0.264583;
 
-    const opt = {
+      const opt = {
         margin: 0,
         filename: 'logistics_protocol.pdf',
         image: { type: 'jpeg', quality: 1 },

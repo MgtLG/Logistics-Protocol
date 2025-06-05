@@ -33,7 +33,10 @@
       border-radius: 4px;
       margin-top: 0.3rem;
     }
-
+    #form-wrapper {
+      padding: 1rem;
+      margin: 0;
+    }
     h1, h2, h3 {
       font-size: 12px;
       color: #333366;
@@ -244,7 +247,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
   function downloadPDF() {
-    const element = document.body;
+    const element = document.getElementById('form-wrapper');
     const scrollHeightMM = document.body.scrollHeight * 0.264583;
 
     const opt = {

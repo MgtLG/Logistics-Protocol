@@ -15,17 +15,14 @@
         height: 297mm;
         margin: 5mm auto;
       }
-
       .no-print {
         display: none !important;
       }
-
       #form-wrapper {
         padding: 0 !important;
       }
-
       input, textarea {
-        font-size: 6px !important;
+        font-size: 8px !important;
         line-height: 1.2;
       }
     }
@@ -39,7 +36,17 @@
       font-family: Arial, sans-serif;
       margin: 0.5rem;
       background-color: #fff;
-      font-size: 6px;
+      font-size: 9px;
+    }
+
+    input, textarea, select {
+      font-size: 8px;
+      width: 100%;
+      padding: 0.2rem;
+      border: 1px solid #999;
+      border-radius: 0;
+      margin-top: 0.2rem;
+      line-height: 1.2;
     }
 
     #form-wrapper {
@@ -48,32 +55,33 @@
     }
 
     h1, h2, h3 {
-      font-size: 9px;
+      font-size: 10px;
       color: #333366;
       margin-bottom: 0.3rem;
     }
 
-    .form-row {
+    label {
+      display: block;
+      margin-top: 0.4rem;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .form-row-horizontal {
       display: flex;
       align-items: center;
       gap: 0.3rem;
       margin-bottom: 0.3rem;
     }
 
-    .form-row label {
-      flex: 0 0 65px;
+    .form-row-horizontal label {
+      width: 60px;
       font-weight: bold;
       margin: 0;
     }
 
-    .form-row input,
-    .form-row select,
-    .form-row textarea {
+    .form-row-horizontal input {
       flex: 1;
-      padding: 0.2rem;
-      font-size: 6px;
-      border: 1px solid #999;
-      line-height: 1.2;
     }
 
     .section {
@@ -93,14 +101,14 @@
       padding: 0.3rem;
       margin: -0.3rem -0.3rem 0.5rem -0.3rem;
       font-weight: 700;
-      font-size: 7.5px;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
 
-    .contact-grid {
+    .form-grid, .contact-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 0.6rem;
     }
 
@@ -114,7 +122,7 @@
     .contact-subgroup h4 {
       margin: 0 0 0.3rem 0;
       color: #444;
-      font-size: 7px;
+      font-size: 10px;
     }
 
     .signature-table {
@@ -145,7 +153,7 @@
 
     .download-button {
       padding: 0.3rem 0.6rem;
-      font-size: 7px;
+      font-size: 8px;
       background-color: #5e1e84;
       color: white;
       border: none;
@@ -164,94 +172,108 @@
 </head>
 <body>
   <div id="form-wrapper">
-    <div style="font-weight:bold; font-size:8px; margin-bottom:5px;">
+    <div style="font-weight:bold; font-size:10px; margin-bottom:5px;">
       Vendor Logistics Protocol — MEGATECH (Confidential)
     </div>
-
     <h1>Vendor Logistics Protocol</h1>
     <p>This Logistics Protocol describes the logistics specifications of the flow between the SUPPLIER site and MEGATECH site. General supply chain and logistics rules are described in the <i>MEGATECH Logistics Requirements for Supplier</i>.</p>
 
-    <!-- MEGATECH PLANT -->
-    <div class="section">
-      <div class="section-title">MEGATECH Plant</div>
-      <div class="form-row"><label>Branch</label><input type="text" value="Megatech"></div>
-      <div class="form-row"><label>Plant</label><input type="text" value="Megatech Industries Tomaszow Sp. Z o.o"></div>
-      <div class="form-row"><label>Address</label><input type="text" value="ul. Piaskowa 120"></div>
-      <div class="form-row"><label>Location</label><input type="text" value="PL 972 00 Tomaszow Mazowiecki"></div>
-      <div class="form-row"><label>Country</label><input type="text" value="PL"></div>
-      <div class="form-row"><label>Phone</label><input type="text" value="+48 0 44 72 56 100"></div>
-      <div class="form-row"><label>Fax</label><input type="text"></div>
-    </div>
+    <div class="form-grid">
+      <div class="section">
+        <div class="section-title">MEGATECH Plant</div>
+            <div class="form-row-horizontal"><label>Branch</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Plant</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Address</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Location</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Country</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Phone/Fax Number</label><input type="text"></div>
+      </div>
 
-    <!-- SUPPLIER PLANT -->
-    <div class="section">
-      <div class="section-title">SUPPLIER Plant</div>
-      <div class="form-row"><label>Group</label><input type="text"></div>
-      <div class="form-row"><label>Division</label><input type="text"></div>
-      <div class="form-row"><label>Address</label><input type="text"></div>
-      <div class="form-row"><label>Location</label><input type="text"></div>
-      <div class="form-row"><label>Country</label><input type="text"></div>
-      <div class="form-row"><label>Phone</label><input type="text"></div>
-      <div class="form-row"><label>Fax</label><input type="text"></div>
-    </div>
+      <div class="section">
 
-    <!-- CONTACTS -->
+        <div class="section-title">SUPPLIER Plant</div>
+            <div class="form-row-horizontal"><label>Group Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Division Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Address</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Location</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Country</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Phone/Fax Number</label><input type="text"></div>
+  </div>       
+</div>
+
+
     <div class="section">
       <div class="section-title">Contacts</div>
       <div class="contact-grid">
         <div>
-        <div class="contact-subgroup">
-  <h4>Sales Manager</h4>
-  <div class="form-row-horizontal">
-    <label>Name</label><input type="text">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Email</label><input type="email">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Phone</label><input type="text">
-  </div>
-        </div> 
-          
+          <h3>Supplier Contacts</h3>
+          <div class="contact-subgroup">
+            <h4>Sales Manager</h4>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
+          </div>
           <div class="contact-subgroup">
             <h4>Customer Quality Engineer</h4>
-            <div class="form-row"><label>Name</label><input type="text"></div>
-            <div class="form-row"><label>Email</label><input type="email"></div>
-            <div class="form-row"><label>Phone</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Logistics Manager</h4>
-            <div class="form-row"><label>Name</label><input type="text"></div>
-            <div class="form-row"><label>Email</label><input type="email"></div>
-            <div class="form-row"><label>Phone</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
+          </div>
+          <div class="contact-subgroup">
+            <h4>Serial Logistic Contact</h4>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
+          </div>
+          <div class="contact-subgroup">
+            <h4>EDI/IT Contact</h4>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
         </div>
-
         <div>
           <h3>MEGATECH Contacts</h3>
           <div class="contact-subgroup">
             <h4>Purchasing Manager</h4>
-            <div class="form-row"><label>Name</label><input type="text"></div>
-            <div class="form-row"><label>Email</label><input type="email"></div>
-            <div class="form-row"><label>Phone</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Supplier Quality Manager</h4>
-            <div class="form-row"><label>Name</label><input type="text"></div>
-            <div class="form-row"><label>Email</label><input type="email"></div>
-            <div class="form-row"><label>Phone</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Logistics Manager</h4>
-            <div class="form-row"><label>Name</label><input type="text"></div>
-            <div class="form-row"><label>Email</label><input type="email"></div>
-            <div class="form-row"><label>Phone</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
+          </div>
+          <div class="contact-subgroup">
+            <h4>Serial Logistic Contact</h4>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
+          </div>
+          <div class="contact-subgroup">
+            <h4>EDI/IT Contact Person</h4>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SIGNATURES -->
     <table class="signature-table">
       <tr>
         <th>SIGNATURES Supplier</th>

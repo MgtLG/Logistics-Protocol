@@ -13,6 +13,24 @@
   <label for="branch">Branch:</label>
   <input type="text" id="branch" placeholder="Megatech" />
     </div>
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.form-row label {
+  flex: 0 0 60px; /* fixed label width */
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 1;
+}
 
 
     @media print {

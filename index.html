@@ -178,15 +178,26 @@
     <h1>Vendor Logistics Protocol</h1>
     <p>This Logistics Protocol describes the logistics specifications of the flow between the SUPPLIER site and MEGATECH site. General supply chain and logistics rules are described in the <i>MEGATECH Logistics Requirements for Supplier</i>.</p>
 
+<div class="form-row-horizontal">
+  <label>Select Plant</label>
+  <select id="plantSelector" onchange="fillPlantDetails()">
+    <option value="">-- Select --</option>
+    <option value="tomaszow">Tomaszow</option>
+    <option value="brno">Brno</option>
+    <!-- Add more plants as needed -->
+  </select>
+
+
+</div>
     <div class="form-grid">
       <div class="section">
         <div class="section-title">MEGATECH Plant</div>
-            <div class="form-row-horizontal"><label>Branch</label><input type="text"></div>
-            <div class="form-row-horizontal"><label>Plant</label><input type="text"></div>
-            <div class="form-row-horizontal"><label>Address</label><input type="text"></div>
-            <div class="form-row-horizontal"><label>Location</label><input type="text"></div>
-            <div class="form-row-horizontal"><label>Country</label><input type="text"></div>
-            <div class="form-row-horizontal"><label>Phone/Fax Number</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Branch</label><input type="text" id="branch"></div>
+            <div class="form-row-horizontal"><label>Plant</label><input type="text" id="plant"></div>
+            <div class="form-row-horizontal"><label>Address</label><input type="text" id="address"></div>
+            <div class="form-row-horizontal"><label>Location</label><input type="text" id="location"></div>
+            <div class="form-row-horizontal"><label>Country</label><input type="text" id="country"></div>
+            <div class="form-row-horizontal"><label>Phone/Fax Number</label><input type="text" id="phoneFax"></div>
       </div>
 
       <div class="section">
@@ -200,7 +211,40 @@
             <div class="form-row-horizontal"><label>Phone/Fax Number</label><input type="text"></div>
   </div>       
 </div>
+<script>
+  function fillPlantDetails() {
+    const selected = document.getElementById('plantSelector').value;
 
+    const plantData = {
+      tomaszow: {
+        branch: 'Megatech',
+        plant: 'Megatech Industries Tomaszow Sp. z o.o.',
+        address: 'ul. Piaskowa 120',
+        location: 'PL 97-200 Tomaszów Mazowiecki',
+        country: 'PL',
+        phoneFax: '+48 44 725 6100'
+      },
+      brno: {
+        branch: 'Megatech',
+        plant: 'Megatech Industries Brno',
+        address: 'Vídeňská 123',
+        location: 'CZ-61900 Brno',
+        country: 'CZ',
+        phoneFax: '+420 543 123 456'
+      }
+    };
+
+    if (selected && plantData[selected]) {
+      const data = plantData[selected];
+      document.getElementById('branch').value = data.branch;
+      document.getElementById('plant').value = data.plant;
+      document.getElementById('address').value = data.address;
+      document.getElementById('location').value = data.location;
+      document.getElementById('country').value = data.country;
+      document.getElementById('phoneFax').value = data.phoneFax;
+    }
+  }
+</script>
 
     <div class="section">
       <div class="section-title">Contacts</div>
@@ -322,24 +366,24 @@
       element.style.paddingTop = '0';
 
       const opt = {
-        margin: 0,
-        filename: 'logistics_protocol.pdf',
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: {
-          scale: 0.9,
-          useCORS: true,
-          scrollY: 0,
-          windowWidth: document.body.scrollWidth
-        },
-        jsPDF: {
-          unit: 'mm',
-          format: 'a4',
-          orientation: 'portrait'
-        },
-        pagebreak: {
-          mode: ['css', 'legacy']
-        }
-      };
+  margin: [10, 5, 5, 5], // top, right, bottom, left (in mm)
+  filename: 'logistics_protocol.pdf',
+  image: { type: 'jpeg', quality: 1 },
+  html2canvas: {
+    scale: 0.85,
+    useCORS: true,
+    scrollY: 0,
+    windowWidth: document.body.scrollWidth
+  },
+  jsPDF: {
+    unit: 'mm',
+    format: 'a4',
+    orientation: 'portrait'
+  },
+  pagebreak: {
+    mode: ['css', 'legacy']
+  }
+};
 
       html2pdf().set(opt).from(element).save().then(() => {
         buttons.forEach(btn => btn.style.display = '');

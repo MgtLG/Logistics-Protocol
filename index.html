@@ -99,39 +99,12 @@
       background-color: #5e1e84;
       color: white;
       padding: 0.3rem;
-      max-width: 150px;
       margin: -0.3rem -0.3rem 0.5rem -0.3rem;
       font-weight: 700;
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
-.narrow-section {
-  max-width: 705px; /* Adjust as needed */
-  margin: 0;
-  padding: 6px;
-}
-
-
-.form-row-horizontal label {
-  width: 200px;
-  margin-right: 10px;
-}
-
-.form-row-horizontal input {
-  flex: 1;
-}
-.form-row-horizontal .section-title {
-  margin-bottom: 0; /* remove extra space */
-  flex-shrink: 0;   /* prevent it from shrinking */
-}
-
-
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-}
-
 
     .form-grid, .contact-grid {
       display: grid;
@@ -171,11 +144,6 @@ textarea {
     .signature-table td:first-child {
       border-left: none;
     }
-    .signature-table th {
-     font-weight: bold;
-     font-size: 14px;
-     padding-top: 10px;  /* Increase to move further down */
-    }
 
     .button-bar {
       margin-top: 0.5rem;
@@ -200,32 +168,11 @@ textarea {
       font-weight: bold;
       margin-top: 0.3rem;
     }
-    .material-title {
-    margin: 0 0 0.5rem 0; /* Removes the negative margins */
-    }
-    .vendor-input {
-    background-color: #fff3cd; /* light yellow */
-    border: 1px solid #999;
-    }
-   .inline-title {
-  padding: 0.3rem 0.6rem;
-  margin: 0;
-  line-height: 1.2;
-  display: flex;
-  align-items: center;
-  height: 100%;
-   } 
- .flex-section{
-  max-width: 420px; /* Adjust as needed */
-  margin: 0;
-  font-size: 14px;
-  margin: -0.3rem -0.3rem 0.5rem -0.3rem;
-  padding: 3px;
-  }
   </style>
 </head>
 <body>
   <div id="form-wrapper">
+     <div style="height:5mm;"></div> <!-- 👈 Add this --><div style="height:10mm;"></div> <!-- 👈 Add this -->
     <div style="font-weight:bold; font-size:10px; margin-bottom:5px;">
       Vendor Logistics Protocol — MEGATECH (Confidential)
     </div>
@@ -245,24 +192,24 @@ textarea {
 </div>
     <div class="form-grid">
       <div class="section">
-        <div class="section-title">SUPPLIER Plant</div>
-            <div class="form-row-horizontal"><label>Group Name</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Division Name</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Address</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Location</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Country</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Phone/Fax Number</label><input type="text"class="vendor-input" style="width:100%;"></div>
+        <div class="section-title">MEGATECH Plant</div>
+            <div class="form-row-horizontal"><label>Branch</label><input type="text" id="branch"></div>
+            <div class="form-row-horizontal"><label>Plant</label><input type="text" id="plant"></div>
+            <div class="form-row-horizontal"><label>Address</label><input type="text" id="Address"></div>
+            <div class="form-row-horizontal"><label>Location</label><input type="text" id="location"></div>
+            <div class="form-row-horizontal"><label>Country</label><input type="text" id="Country"></div>
+            <div class="form-row-horizontal"><label>Phone/Fax Number</label><input type="text"></div>
       </div>
 
       <div class="section">
 
-        <div class="section-title">MEGATECH Plant</div>
-            <div class="form-row-horizontal"><label>Branch</label><input type="text" id="branch"></div>
-            <div class="form-row-horizontal"><label>Plant</label><input type="text" id="plant"></div>
-            <div class="form-row-horizontal"><label>Address</label><input type="text" id="address"></div>
-            <div class="form-row-horizontal"><label>Location</label><input type="text" id="location"></div>
-            <div class="form-row-horizontal"><label>Country</label><input type="text" id="country"></div>
-            <div class="form-row-horizontal"><label>Phone/Fax Number</label><input type="text" id="phoneFax"></div>
+        <div class="section-title">SUPPLIER Plant</div>
+            <div class="form-row-horizontal"><label>Group Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Division Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Address</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Location</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Country</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Phone/Fax Number</label><input type="text"></div>
   </div>       
 </div>
 <script>
@@ -281,9 +228,9 @@ textarea {
       brno: {
         branch: 'Megatech',
         plant: 'Megatech Industries Brno',
-        address: 'U Vlečky 1152',
-        location: 'Brn-Modřice 664 42',
-        country: 'Czech Republic',
+        address: 'Vídeňská 123',
+        location: 'CZ-61900 Brno',
+        country: 'CZ',
         phoneFax: '+420 543 123 456'
       }
     };
@@ -307,33 +254,33 @@ textarea {
           <h3>Supplier Contacts</h3>
           <div class="contact-subgroup">
             <h4>Sales Manager</h4>
-            <div class="form-row-horizontal"><label>Name</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Email</label><input type="email"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Phone</label><input type="text"class="vendor-input" style="width:100%;"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Customer Quality Engineer</h4>
-            <div class="form-row-horizontal"><label>Name</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Email</label><input type="email"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Phone</label><input type="text"class="vendor-input" style="width:100%;"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Logistics Manager</h4>
-            <div class="form-row-horizontal"><label>Name</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Email</label><input type="email"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Phone</label><input type="text"class="vendor-input" style="width:100%;"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>Serial Logistic Contact</h4>
-            <div class="form-row-horizontal"><label>Name</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Email</label><input type="email"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Phone</label><input type="text"class="vendor-input" style="width:100%;"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
           <div class="contact-subgroup">
             <h4>EDI/IT Contact</h4>
-            <div class="form-row-horizontal"><label>Name</label><input type="text"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Email</label><input type="email"class="vendor-input" style="width:100%;"></div>
-            <div class="form-row-horizontal"><label>Phone</label><input type="text"class="vendor-input" style="width:100%;"></div>
+            <div class="form-row-horizontal"><label>Name</label><input type="text"></div>
+            <div class="form-row-horizontal"><label>Email</label><input type="email"></div>
+            <div class="form-row-horizontal"><label>Phone</label><input type="text"></div>
           </div>
         </div>
         <div>
@@ -371,508 +318,7 @@ textarea {
         </div>
       </div>
     </div>
-<!-- Second Page of Vendor Logistics Protocol -->
-<div class="narrow-section" style="page-break-before: always;">
-  <div class="section-title">INFORMATION FLOW</div>
-  <div class="form-row-horizontal"><label>Longterm forecast period (LAB)</label><input type="text" placeholder="Min 6 months"></div>
-  <div class="form-row-horizontal"><label>Firm orders period (FAB)</label><input type="text" placeholder="2 weeks"></div>
-  <div class="form-row-horizontal"><label>Transmission mode</label><input type="text" placeholder="EDI"></div>
-  <div class="form-row-horizontal"><label>Supplier ASN available (Yes/No)</label><input type="text" placeholder="No"></div>
 
-  <p style="font-size:8px; margin-top:0.4rem;">Important note for EDI suppliers: ASN must be submitted by supplier as soon as the shipment leaves the supplier's facility.</p>
-
-  <div class="section-title">DOCUMENTATION FLOW</div>
-  <label>Documents from the supplier</label>
-  <div class="form-grid">
-    <div>
-<div class="form-row-horizontal">
-  <span class="line-number">1.</span>
-  <select class="vendor-input">
-    <option value="">-- Select Document --</option>
-    <option>Delivery Note / Packing Slip</option>
-    <option>Long Time Supplier Declaration</option>
-    <option>Invoice</option>
-  </select>
-</div>
-
-<div class="form-row-horizontal">
-  <span class="line-number">2.</span>
-  <select class="vendor-input">
-    <option value="">-- Select Document --</option>
-    <option>Delivery Note / Packing Slip</option>
-    <option>Long Time Supplier Declaration</option>
-    <option>Invoice</option>
-  </select>
-</div>
-<div class="form-row-horizontal">
-  <span class="line-number">3.</span>
-  <select class="vendor-input">
-    <option value="">-- Select Document --</option>
-    <option>Delivery Note / Packing Slip</option>
-    <option>Long Time Supplier Declaration</option>
-    <option>Invoice</option>
-  </select>
-</div>
-<div class="form-row-horizontal">
-  <span class="line-number">4.</span>
-  <select class="vendor-input">
-    <option value="">-- Select Document --</option>
-    <option>Delivery Note / Packing Slip</option>
-    <option>Long Time Supplier Declaration</option>
-    <option>Invoice</option>
-  </select>
-</div>
-<div class="form-row-horizontal">
-  <span class="line-number">5.</span>
-  <select class="vendor-input">
-    <option value="">-- Select Document --</option>
-    <option>Delivery Note / Packing Slip</option>
-    <option>Long Time Supplier Declaration</option>
-    <option>Invoice</option>
-  </select>
-
-</div>
-  <p style="font-size:8px;">*LTSD = Long Time Supplier Declaration. Must be submitted annually.</p>
-  <p style="font-size:8px;">DL must include Megatech material and order number & quantity shipped.</p>
-  <p style="font-size:8px;">Reference to a MGT order number as well as delivery note number to be included on the invoice.</p>
-
-</div>
-</div>
-<div class="flex-section">
-  <div class="form-row-horizontal">
-    <div class="section-title inline-title">FLEXIBILITY</div>
-    <input type="text" class="vendor-input"style="text-align: center;" placeholder="Specification of ability of the supplier to accept increases/decreases of customer demand">
-  </div>
-</div>
-
-</div>
-
-<div class="section">
-  <div class="section-title material-title">MATERIAL LIST</div>
-  <table style="width:100%; font-size:8px; border-collapse: collapse; border:1px solid #999;">
-    
-  <colgroup>
-    <col style="width: 8%;">
-    <col style="width: 20%;">
-    <col style="width: 9%;">
-    <col style="width: 10%;">
-    <col style="width: 8%;">
-    <col style="width: 8%;">
-    <col style="width: 8%;">
-    <col style="width: 8%;">
-    <col style="width: 10%;">
-    <col style="width: 6%;">
-    <col style="width: 5%;">
-  </colgroup>
-  <thead style="background-color:#eee;">
-      <tr>
-        <th style="border:1px solid #999; padding:2px;">Material</th>
-        <th style="border:1px solid #999; padding:2px;">Description</th>
-        <th style="border:1px solid #999; padding:2px;">Project</th>
-        <th style="border:1px solid #999; padding:2px;">MOQ</th>
-        <th style="border:1px solid #999; padding:2px;">Agreed safety stock</th>
-        <th style="border:1px solid #999; padding:2px;">Max. weekly capacity</th>
-        <th style="border:1px solid #999; padding:2px;">Production batch size</th>
-        <th style="border:1px solid #999; padding:2px;">Reaction Time</th>
-        <th style="border:1px solid #999; padding:2px;">Total Replenishment Lead Time</th>
-        <th style="border:1px solid #999; padding:2px;">HSM Code</th>
-        <th style="border:1px solid #999; padding:2px;">Weight/pc</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      <!-- Add more rows as needed -->
-    </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-<tbody>
-      <tr>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-        <td style="border:1px solid #999; padding:2px;"><input type="text" style="width:100%; border:none;"></td>
-      </tr>
-      </tbody>
-  </table>
-</div><!-- Third Page of Vendor Logistics Protocol -->
-<div class="section" style="page-break-before: always;">
-  <div class="section-title">PHYSICAL FLOWS</div>
-  <div class="form-row-horizontal"><label>Incoterms</label><input type="text"></div>
-  <div class="form-row-horizontal"><label>Loading Mode (back/side/upper)</label><input type="text"></div>
- 
-</div>
-
-<div class="section">
-  <div class="section-title">LOGISTICS FLOW DETAILS</div>
-  <div class="form-row-horizontal"><label>Binding call-off sending day</label><input type="text"></div>
-  <div class="form-row-horizontal"><label>Loading of binding call-off</label><input type="text"></div>
-  <div class="form-row-horizontal"><label>Pick-up material at supplier plant</label><input type="text"></div>
-  <div class="form-row-horizontal"><label>Receiving at MEGATECH plant</label><input type="text"></div>
-  <div class="form-row-horizontal"><label>Packaging transport from Megatech</label><input type="text"></div>
-  <div class="form-row-horizontal"><label>Packaging receiving at supplier plant</label><input type="text"></div>
-</div>
-
-<div class="section">
-  <div class="section-title">OTHER INFORMATION</div>
-  <textarea rows="2"></textarea>
-</div>
-
-<div class="section">
-  <div class="section-title">TRANSPORT </div>
-  <div class="form-grid">
-  <div class="form-row-horizontal">
-    <label>Company name</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Address</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Country</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Contact person name</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Contact person email</label>
-    <input type="email" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Contact person phone (24/7)</label>
-    <input type="text" class="vendor-input">
-  </div>
-</div>
-
-</div>
-<div class="section">
-  <div class="section-title">PICK UP LOCATION </div>
- <div class="form-grid">
-  <div class="form-row-horizontal">
-    <label>Company name</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Address</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Country</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Contact person name</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Contact person email</label>
-    <input type="email" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Contact person phone (24/7)</label>
-    <input type="text" class="vendor-input">
-  </div>
-</div>
-</div>
-<div class="section">
-  <div class="section-title">CUSTOMS</div>
-  <div class="form-grid">
-  <div class="form-row-horizontal">
-    <label>Company name</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Address</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Country</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Contact person name</label>
-    <input type="text" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Contact person email</label>
-    <input type="email" class="vendor-input">
-  </div>
-  <div class="form-row-horizontal">
-    <label>Contact person phone (24/7)</label>
-    <input type="text" class="vendor-input">
-  </div>
-</div>
-
-</div>
     <table class="signature-table">
       <tr>
         <th>SIGNATURES Supplier</th>
@@ -880,30 +326,26 @@ textarea {
       </tr>
       <tr>
         <td>
-          
-          <div class="form-row-horizontal"><label> Log. Manager Name</label><input type="text"></div>
-          <div class="form-row-horizontal"><label>Date</label><input type="date"></div>
-         <div class="form-row-horizontal"><label>Siganture</label><input type="text"></div>
+          <div class="role">Logistics Manager</div>
+          <label>Date:</label><input type="date">
+          <label>Signature:</label><input type="text">
         </td>
         <td>
-          
-          <div class="form-row-horizontal"><label> Log. Manager Name</label><input type="text"></div>
-          <div class="form-row-horizontal"><label>Date</label><input type="date"></div>
-          <div class="form-row-horizontal"><label>Siganture</label><input type="text"></div>
+          <div class="role">Logistics Manager</div>
+          <label>Date:</label><input type="date">
+          <label>Signature:</label><input type="text">
         </td>
       </tr>
       <tr>
         <td>
-        
-          <div class="form-row-horizontal"><label>Sales Manager Name</label><input type="text"></div>
-          <div class="form-row-horizontal"><label>Date</label><input type="date"></div>
-          <div class="form-row-horizontal"><label>Siganture</label><input type="text"></div>
+          <div class="role">Sales Manager</div>
+          <label>Date:</label><input type="date">
+          <label>Signature:</label><input type="text">
         </td>
         <td>
-         
-          <div class="form-row-horizontal"><label>Purchasing Manager Name</label><input type="text"></div>
-          <div class="form-row-horizontal"><label>Date</label><input type="date"></div>
-          <div class="form-row-horizontal"><label>Siganture</label><input type="text"></div>
+          <div class="role">Purchasing Manager</div>
+          <label>Date:</label><input type="date">
+          <label>Signature:</label><input type="text">
         </td>
       </tr>
     </table>
@@ -916,16 +358,18 @@ textarea {
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
-    function downloadPDF() {
-      const element = document.getElementById('form-wrapper');
-      const buttons = document.querySelectorAll('.no-print');
+function downloadPDF() {
+  const element = document.getElementById('form-wrapper');
+  const buttons = document.querySelectorAll('.no-print');
 
-      buttons.forEach(btn => btn.style.display = 'none');
-      element.style.marginTop = '0';
-      element.style.paddingTop = '0';
+  buttons.forEach(btn => btn.style.display = 'none');
 
-      const opt = {
-  margin: [10, 5, 5, 5], // top, right, bottom, left (in mm)
+
+
+  // Force layout update before PDF generation
+  setTimeout(() => {
+    const opt = {
+  margin: [20, 5, 5, 5], // top, right, bottom, left (in mm)
   filename: 'logistics_protocol.pdf',
   image: { type: 'jpeg', quality: 1 },
   html2canvas: {
@@ -944,11 +388,15 @@ textarea {
   }
 };
 
-      html2pdf().set(opt).from(element).save().then(() => {
-        buttons.forEach(btn => btn.style.display = '');
-      });
-    }
+
+    html2pdf().set(opt).from(element).save().then(() => {
+      buttons.forEach(btn => btn.style.display = '');
+      element.style.paddingTop = '0'; // Reset
+    });
+  }, 200); // delay ensures the padding is "seen"
+}
+
+
   </script>
 </body>
 </html>
-
